@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+      <div>
+        <h3>Create and send a reminder via SMS</h3>
+        {% from "_formhelpers.html" import render_field %}
+        <form action="/" method="post">
+            {{ form.csrf_token }}
+            {{ render_field(form.phone_number) }}
+            {{ render_field(form.message_text) }}
+        <br>
+        <input type="submit" class="btn btn-log btn-success" value="Create and Send Message"></input>
+        </form>
+      </div>
+{% endblock %}
